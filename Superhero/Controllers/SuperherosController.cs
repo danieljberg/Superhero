@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Superhero.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,8 @@ namespace Superhero.Controllers
         // GET: Superheros
         public ActionResult Index()
         {
-            return View();
+            Hero superheroList = new Hero();
+            return View(superheroList);
         }
 
         // GET: Superheros/Details/5
@@ -28,13 +30,13 @@ namespace Superhero.Controllers
         // GET: Superheros/Create
         public ActionResult Create()
         {
-            Models.Superhero superhero = new Models.Superhero();
+            Models.Hero superhero = new Models.Hero();
             return View(superhero);
         }
 
         // POST: Superheros/Create
         [HttpPost]
-        public ActionResult Create(Models.Superhero superhero)
+        public ActionResult Create(Models.Hero superhero)
         {
             try
             {
